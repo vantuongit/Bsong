@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	
+	 
+	 
+	<!--  [Bieeur thuc chinh quy]
+	 
+	 ^ : bắt đầu
+	 $ : kết thúc
+	 [a-z] : các ký tự từ a-z viết thường
+	 [A-Z] : các ký tự từ a-z viết hoa
+	 ([a-z]*) : đại diện 0 hoặc nheeiuf ký tự từ a- z viết thường
+	 ([A-Z]*) : đại diện 0 hoặc nheeiuf ký tự từ a- z viết hoa
+	 
+	 (.*) : đại diện 0 hoặc nhiều ký tự bất kỳ
+	 (.+) : đại diện 1 hoặc nhiều ký tự bất kỳ
+	([a-zA-Z]* | +) : đại diện các ký tự từ a-z A-Z 
+	
+	[0-9] : các số từ 0 -9
+	([0-9]+) : các số từ 1 -n
+	([0-9]*) : các số từ 0 -n
+	 
+	 cat t chưa truyền slug
+	  
+	  
+		/cat?id=2
+		bsong.local:8080/danh-muc/nhac-tre-1.html -->
+	
+<urlrewrite>
+	<rule>
+		<from>^/category/(.+)-([0-9]+).html$</from>
+		<to>/cat?id=$2</to>
+	</rule>
+	<rule>
+		<from>^/category/(.+)-([0-9]+).([0-9]+).html$</from>
+		<to>/cat?id=$2&amp;page=$3</to>
+	</rule>
+	<rule>
+		<from>^/detail/(.+)-([0-9]+).html$</from>
+		<to>/detail?id=$2</to>
+	</rule>
+</urlrewrite>
